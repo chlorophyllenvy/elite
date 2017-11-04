@@ -1,0 +1,753 @@
+@import "variables.less";
+
+body {
+	background:white;
+	font-family:'regular', serif; 
+	max-width:1024px;
+	display:block;
+	margin:0 auto;
+	height:100%;
+	color:@grey; 
+ 
+	header {
+		display:block;
+		height:auto;
+		box-sizing:border-box;
+		width:100%;
+		.top_header {
+			height:110px;
+			aside.phone {
+				.box;
+				display:inline-block;
+				width:30%;
+				padding:75px 10px;
+			}
+
+			aside.social {
+				.box;
+				display:inline-block;
+				float:right;
+				padding-top:75px;
+				text-align:right;
+				vertical-align:middle;
+
+				ul {
+					list-style-type:none;
+					li {
+						display:inline-block;
+						width:28px;
+						height:28px;
+						border-radius: 50%;
+						background:@grey;
+						text-align:center;
+						padding:4px;
+						.box;
+						transition:background-color 0.5s;
+						img {
+							max-width:16px;
+							max-height:16px;
+						}
+						&:hover {
+							background:@blue;
+						}
+					}
+				}
+			}
+		}
+		.strip {
+			height:60px;
+			background:@grey;
+			.box;
+			color:white;
+			.logo {
+				margin:0 auto;
+				z-index:1000;
+				background:white;
+				border:2px solid @lightgrey;
+				height:84px;
+				width:84px;
+				position:relative;
+				top:-42px;
+			}
+			ul {
+				.box;
+				position:relative;
+				width:50%;
+				display:inline-block;
+				float:left;
+				top:-65px;
+				li {
+					display:inline-block;
+					a {
+						display:block;
+					}
+				}
+			}
+			ul:first-of-type {
+				// .box;
+				width:50%;
+				li {
+					.box;
+					width:33%;
+					float:right;
+					// position:relative;
+					.hover {
+						position:relative;
+						top:3px;
+						display:hidden;
+						height:5px;
+						margin:4px auto 0;
+						background:@grey;
+						width:0px;
+						transition:all 0.5s;
+						float:left;
+					}
+					&:hover {
+						.hover {
+							display:block;
+							background:@orange;
+							width:45%;
+						}
+					}
+				}
+			}
+			ul:nth-of-type(2) {
+				li {
+					.box;
+					width:33%;
+					float:left;
+					display:inline-block;
+					text-align:right;
+					.hover {
+						position:relative;
+						top:3px;
+						display:hidden;
+						height:5px;
+						margin:4px auto 0;
+						background:@grey;
+						width:0px;
+						transition:all 0.5s;
+						float:right;
+						display:block;
+					}
+					&:hover {
+						.hover {
+							display:block;
+							background:@orange;
+							width:45%;
+						}
+					}
+				}
+			}
+		}
+	}
+	#hero {
+		height:auto;
+		width:100%;
+		background:url("/img/wood-floor.jpg") no-repeat top center;
+		background-size:cover;
+		.headline {
+			display:block;
+			height:auto;
+			.box;
+			font-family:'bold', serif;
+			padding:10% 0;
+			section {
+				.box;
+				background:rgba(244,171,68, 0.7);
+				width:65%;
+				height:80%;
+				display:block;
+				margin:0 auto;
+				text-align:center;
+				padding:30px;
+				color:white;
+
+				h1 {
+					font-size:40px;
+					padding:20px;
+				}
+				p {
+					font-size:20px;
+					line-height:1.3;
+				}
+			}
+		}
+		.cta {
+			display:block;
+			position:relative;
+			bottom:0px;
+			width:100%;  
+			height:auto;
+			.box;
+			background:rgba(50,50,50,0.8);
+			color:white;
+			font-size:22px;
+			span {
+				.box;
+				display:block;
+				text-align:center;
+				height:auto;
+				padding:20px 10px;
+			}
+		}
+	}   
+	#about {
+		padding-top:50px;
+		h2 {
+			.heading;
+		}
+		.about-container {
+			.box;
+			display:block;
+			width:33%;
+			float:left;
+			text-align:center;
+			margin-bottom:50px;
+			line-height:1.5;
+			text-align:center;
+			img {
+				width:114px;
+				height:114px;
+				display:block;
+				margin:0 auto 50px;
+				&.expertise:hover {
+					animation: 6s ease 0s infinite normal none running spin;
+				}
+				&.professionalism {
+					transform-origin: right center;
+					transition:all 2s;
+					&:hover {
+						// animation: 5s ease-out 0s infinite normal none running flip
+						transform: translateX( -100% ) rotateY( -180deg );
+					}
+				}
+				&.satisfaction {
+					transform-origin:center bottom;
+					transition:all 1.5s;
+					&:hover {
+						transform: translateY(-100%) rotateX(-180deg);
+					}
+				}
+				
+			}
+			h3 {
+				font-family: 'bold', serif;
+				font-size:24px;
+				margin-bottom:22px;
+			}
+			p {
+				font-family: 'regular', serif;
+				font-size:18px;
+				padding:0 10px;
+			}
+		}
+		@keyframes flip {
+			0% {
+				transform: scale(90deg);
+			}
+			15% {
+				transform:scale(0deg);
+			}
+			85% {
+				transform:scale(0deg);
+			}
+			100% {
+				transform:scale(90deg);
+			}
+		}
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+			25% {
+				transform:rotate(360deg);
+			}
+			100% {
+				transform:rotate(360deg);
+			}
+		}
+	}
+	#services {
+		padding-top:50px;
+		width:100%;
+		display:block;
+		// height:535px;
+		background:url("/img/services-wood-floor.jpg") repeat-y top center;
+		padding-bottom:5%;
+		h2 {
+			.heading;
+			color:white;
+			border-color:white;
+		}
+		.services-container {
+			width:90%;
+			margin:0 auto;
+			display:block;
+			min-height:200px;
+			background:rgba(255,255,255,0.7);
+			padding:40px 0;
+			.services {
+				.box;
+				display:block;
+				width:33%;
+				float:left;
+				text-align:center;
+				h3 {
+					margin-bottom:10px;
+					font-family:'bold', serif;
+					font-size:24px;
+				}
+				ul {
+					list-style-type:disc;
+					margin-left:33%;
+					text-align:left;
+					font-family:'regular', serif;
+					font-size:18px;
+					li {
+						padding:10px 0;
+					}
+				}
+			}
+		}
+	}
+	#gallery {
+		padding-top:50px;
+		h2 {
+			.heading;
+		}
+		.gallery-container {
+			 display:flex;
+			 flex-flow: row nowrap;
+			 justify-content:space-between;
+			 align-items:center;
+			 .gallery {
+				 width:32%;
+				 height:300px;
+				 transition:all 1.5s;
+				 overflow:hidden;
+				 
+				 a {
+					display:block;
+					height:100%;
+					cursor:pointer;
+					span {
+						font-size:26px;
+						font-family:"regular", serif;
+						width:100%;
+						background:rgba(50,50,50,0.7);
+						position:relative;
+						display:block; 
+						color:white;
+						padding:15px 0;
+						text-align:center;
+						transition:all 0.75s;
+						&.title {
+							top:25%;
+							left:0;
+						}
+						&.link {
+							.box;
+							right:100%;
+							bottom:100%;
+							height:0%;
+							transition:all 0.75s;
+						}
+					}
+					&:hover {
+						span {
+							&.title {
+								top:0%;
+								left:-100%;
+								padding:0;
+								font-size:0.5em;
+							}
+							&.link {
+								top:10%;
+								height:80%;
+								left:10%;
+								width:80%;
+								background:rgba(100,100, 100,0.7);
+							}
+						}
+					}
+				 }	
+			 }
+			 .gallery:nth-of-type(1) {
+				 background:url("/img/wood-floor-gallery.jpg") no-repeat top center;
+				 background-size:cover;
+			 }
+			 .gallery:nth-of-type(2) {
+				 background:url("/img/tile-gallery.jpg") no-repeat top center;
+				 background-size:cover;
+			 }
+			 .gallery:nth-of-type(3) {
+				 background:url("/img/stone-gallery.jpg") no-repeat top center;
+				 background-size:cover;
+			 }
+		}
+	}
+	#contact {
+		padding-top:50px;
+		// overflow:hidden;
+		// height:483px;
+		&.hide {
+			height:0px;
+			transition:height 0.5s;
+		}
+		
+		h2 {
+			.heading;
+		}
+		form {
+			transition:height 0.75s;
+			overflow:hidden;
+			h1 {
+				text-align:center;
+				width:100%;
+				display:block;
+				font-size:30px;
+				font-family: "regular", serif;
+				padding:0 0 20px;
+				b {
+					font-family: "bold", serif;
+					vertical-align:middle;
+				}
+				&:before {
+					content:"";
+					width:73px;
+					height:73px;
+					display:inline-block;
+					background:url("/img/questions.gif") no-repeat top center;
+					vertical-align:middle;
+					margin-right:30px;
+				}
+			}
+			span.error {
+				background:red;
+				color:white;
+				padding:15px;
+				margin:10px;
+				border-radius:15px;
+				border:2px solid floralwhite;
+				visibility:hidden;
+				&.show {
+					visibility:visible;
+					display:block;
+				}
+			}
+			textarea {
+				.box;
+				// float:right;
+				width:50%;
+				font-family:inherit;
+			}
+			fieldset {
+				.box;
+				width:49%;
+				display:inline-block;
+				input {
+					.box;
+					display:block;
+					margin:0px 10px 28px;
+					width:95%;
+					padding:5px;
+					// text-transform:uppercase;
+				}
+				&:nth-of-type(2) {
+					float:right;
+					margin:20px 0 0;
+				}
+			}
+			
+			input[type="button"] {
+				width:auto;
+				float:right;
+				margin:0 15px 30px;
+				background:@blue;
+				color:white;
+				padding:12px;
+				border:0px;
+				border-radius:15px;
+				box-shadow: 0px 0px 0px 0px;
+				transition:background-color 500ms, box-shadow 500ms;
+		
+				&:hover {
+					background:@orange;
+					box-shadow:0px 0px 1px 2px @lightgrey;
+				}
+			}
+			small {
+				a {
+					color:@blue;
+				}
+			}
+		}
+	}
+	footer {
+		background:@lightgrey;
+		width:100%;
+		display:block;
+		height:auto;
+		.box;
+		p {
+			font-size:0.7em;
+			line-height:1.5;
+			color:white;
+			text-align:left;
+			padding:20px 25px 0px;
+		}
+	}
+	&.gall {
+		#wood, #tile, #stone {
+			display:block;
+			clear:both;
+			padding-top:20px;
+			color:@blue;
+			h3 {
+				display:block;
+				text-align:center;
+				text-decoration:underline;
+			}
+		}
+		#wood li,#tile li,#stone li {
+			display:inline-block;
+			box-sizing:border-box;
+			width:25%;
+			float:left;
+			overflow:hidden;
+			height:150px;
+			padding:10px;
+		}
+		#wood li img,#tile li img,#stone li img {
+			max-width:100%;
+			box-sizing:border-box;
+			vertical-align:middle;
+		}
+		.ninety {
+			-webkit-transform:rotate(90deg);
+		}
+	}
+	#overlay {
+		display:block;
+		position:fixed;
+		width:100%;
+		height:100%;
+		background:rgba(100,100,100,0.9);
+		top: 0px;
+	    left: 0px;
+	    z-index: 9999;
+	    #overlay-content {
+			height:140%;
+	    	li {
+	    		display:block;
+	    		box-sizing:border-box;
+	    		position:relative;
+				height:100%;
+				float:left;
+	    	}
+	    	#previous {
+	    		width:10%;
+	    		min-width:30px;
+	    		margin-top:30%;
+	    		text-align:center;
+	    		img {
+	    			display:block;
+	    			margin:0 auto;
+	    			&.hide {
+	    				display:none;
+	    			}
+	    		}
+	    	}
+	    	#image {
+	    		margin-top:5%;
+	    		width:80%;
+	    		background:white;
+	    		height:60%;
+	    		display:block;
+	    		border-radius:15px;
+				.image {
+					max-height: 100%;
+					display: block;
+					overflow: scroll;
+					border-radius: 20px;
+					img {
+						box-sizing:border-box;
+						width:100%;
+						border:5px solid white;
+						box-shadow:5px 5px 5px rgba(80,80,80,0.8);
+						border-radius:15px;
+					}
+				}
+	    		#close {
+					position: absolute;
+				    top: -20px;
+				    left: 97%;
+	    		}
+	    	}
+	    	#next {
+	    		#previous;
+	    	}
+	    }
+	    &.hide {
+    		display:none;
+    	}
+	}
+} 
+
+@media(max-width:768px) {
+	body {
+		header {
+			.strip {
+				height:auto;
+				ul {
+					top:-70px;
+					li.services {
+						position:relative;
+						top:40px;
+						left:-33%;
+					}
+					li.gallery {
+						position:relative;
+						top:40px;
+						left:33%;
+					}
+					li {
+						// .hover {
+						// 	position:relative;
+						// 	top:3px;
+						// 	display:hidden;
+						// 	height:5px;
+						// 	// margin:4px auto 0;
+						// 	background:@grey;
+						// 	width:0px;
+						// 	transition:all 0.5s;
+						// }
+						&:hover {
+							.hover {
+								// display:block;
+								// background:@orange;
+								width:65% !important;
+							}
+						}
+					}
+				} 
+			}
+		}
+	}
+}
+
+@media(max-width:580px) {
+	.mobile {
+		display:block;
+		margin-top:-50px;
+	}
+	.desktop {
+		display:none;
+	}
+	body #about .about-container, body #services .services-container .services, body #gallery .gallery-container .gallery, body #contact form fieldset, body #contact form textarea, body #contact form small {
+		display:block;
+		width:100%;
+	}
+
+	body #gallery .gallery-container  {
+		flex-wrap:wrap;
+		.gallery {
+			margin:15px 0;
+		}
+	}
+
+	body header .strip .nav {
+		width:100%;
+	}
+
+	body #contact form h1:before {
+		display:block;
+		margin:0 auto;
+	}
+
+	body #contact form {
+		padding:0 15px 15px;
+	}
+	
+	body #services .services-container .services {
+		// border:2px solid pink;
+		// margin:20px 0;
+		
+		&:after {
+			content:"";
+			border-bottom:1px solid @lightgrey;
+			width:80%;
+			height:1px;
+			display:block;
+			margin:20px auto;
+		}
+		&:last-of-type:after {
+			border-bottom:0;
+		}
+		ul {
+			margin-left:23%;
+		}
+	}
+	 
+	body #contact form small {
+		clear:both;
+		font-size:0.8em;
+		margin-bottom:30px;
+	}
+}
+
+@media(max-width:479px) {
+	body #hero .headline section {
+		h1 {
+			font-size:24px;
+			padding:10px;
+		}
+		p {
+			font-size:14px;
+		}
+	}
+	body header .top_header aside.social ul {
+		position:absolute;
+		top:0;
+		right:0;
+		li {
+			margin:6px;
+		}
+	}
+
+	body #contact form small {
+		line-height:1.5;
+	}
+}
+
+@media(max-width:375px) {
+	body header .strip {
+		height:150px;
+		ul  {
+			top:-20px;
+			li {
+				float:none;
+				// width:auto;
+				// &.about {
+				// 	position: relative;
+				// 	left: 5%;
+				// }
+				// &.contact {
+				// 	position: relative;
+				// 	left: -5%;
+				// }
+				// &.services {
+				// 	position: relative;
+				// 	left: -10%;
+				// }
+			}
+			// li.services {
+			// 	left:-16%;
+			// }
+			// li.gallery {
+			// 	left:16%;
+			// }
+		}
+	}
+}
